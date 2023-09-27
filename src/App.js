@@ -2,7 +2,6 @@ import './App.css';
 import StockDetailPage from './Pages/StockDetailPage';
 import StockOverviewPage from './Pages/StockOverviewPage';
 import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
-//cka334hr01qpia5gt9s0cka334hr01qpia5gt9sg
 
 function App() {
   return (
