@@ -1,7 +1,10 @@
 import {useState,useEffect} from 'react';
 import finnHub from '../APIs/finnHub';
+import { useGlobalContext } from '../Context/WatchListContext';
 
 const AutoComplete = () => {
+
+  const {addToList} = useGlobalContext();
 
   const [search,setSearch]=useState('');
   const [searchResult,SetSearchResult]=useState([]);
@@ -44,7 +47,11 @@ const showDropdown=()=>{
         <ul className= {`h-64 overflow-y-scroll overflow-x-hidden cursor-pointer ${showDropdown(search)}`}>
         {searchResult.map((stockSearch)=>{
           return(
-          <li key={stockSearch.symbol} className='border bg-white px-2 py-2 hover:bg-slate-100'>{stockSearch.description}({stockSearch.symbol})</li>
+          <li onClick={()=>{
+            addToList(stockSearch.symbol)
+            setSearch('');
+          }}
+          key={stockSearch.symbol} className='border bg-white px-2 py-2 hover:bg-slate-100'>{stockSearch.description}({stockSearch.symbol})</li>
           )
         })}
         </ul>

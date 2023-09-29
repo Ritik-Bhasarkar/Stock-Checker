@@ -9,7 +9,7 @@ function App() {
       <Router>
         <Routes>
           <Route path='/' element={<StockOverviewPage/>}/>
-          <Route path='/detail/:stock' element={<StockDetailPage/>}/>
+          <Route path='/detail/:symbol' element={<StockDetailPage/>}/>
         </Routes>
       </Router>
     </div>

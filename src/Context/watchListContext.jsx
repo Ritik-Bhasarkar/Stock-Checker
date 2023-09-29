@@ -1,19 +1,39 @@
-import { createContext, useContext } from "react"
+import { createContext, useContext,useState } from "react"
 
-export const watchListContext = createContext();
+const WatchListContext = createContext();
 
-export const watchListProvider = ({children})=>{
+const WatchListProvider = ({children})=>{
+
+const [watchList, setWatchList] = useState(['GOOGL','MSFT','AAPL'])
 
 
+const addToList =(stock)=>{
+    if(watchList.indexOf(stock) === -1){
+        setWatchList([...watchList,stock]);
+    }
+}
 
-return <watchListProvider>
-        <watchListContext.Provider >
+const removeFromList=(stock)=>{
+    setWatchList(watchList.filter((el)=>{
+        return el !== stock;
+    }))
+}
 
-        </watchListContext.Provider>
-</watchListProvider>
+const obj={
+    watchList,
+    addToList,
+    removeFromList,
+}
+
+return <WatchListContext.Provider  value={obj}>
+            {children}
+        </WatchListContext.Provider>
 
 };
 
-export const UseGlobalContext=()=>{
-    return useContext(watchListContext);
+export const useGlobalContext=()=>{
+    return useContext(WatchListContext);
 }
+
+
+export {WatchListContext,WatchListProvider}

@@ -2,17 +2,20 @@ import {useState , useEffect} from 'react';
 import finnHub from '../APIs/finnHub';
 import {BsFillCaretUpFill} from 'react-icons/bs';
 import {BsFillCaretDownFill} from 'react-icons/bs';
-import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
+import { useGlobalContext } from '../Context/WatchListContext';
 
 const StockList = () => {
 
-    const [stock,setStock] = useState([]);
-    const [watchList, setWatchList] = useState(['GOOGL','MSFT','AAPL'])
+  const {watchList} = useGlobalContext();
+  const navigate = useNavigate();
 
-
+  const [stock,setStock] = useState([]);
+  
     const changeColor=(change)=>{
     return change < 0 ?'text-red-400':'text-green-600'
     }
+
     const changeSign=(change)=>{
     return change < 0 ? <BsFillCaretDownFill/>: <BsFillCaretUpFill/>
     }  
@@ -44,7 +47,12 @@ const StockList = () => {
   }
     fetchData();
     return()=>(isMounted=false)
-   },[])
+   },[watchList])
+
+
+   const handleStockSelect=(symbol)=>{
+    navigate(`detail/${symbol}`)
+   }
 
 
     return (
@@ -67,7 +75,7 @@ const StockList = () => {
             const {symbol,data} =stockData;
             return (
               <tr key={symbol} className='bg-white border-b'>
-                <th className='px-6 py-4 font-medium whitespace-nowrap'>{symbol}</th>
+                <th onClick={()=>handleStockSelect(symbol)} className='px-6 py-4 font-medium whitespace-nowrap cursor-pointer'>{symbol}</th>
                 <td className='px-6 py-4'>{data.c}</td>
                 <td className={`px-6 py-4 ${changeColor(data.d)}`}>
                   <span className='flex items-center '>
