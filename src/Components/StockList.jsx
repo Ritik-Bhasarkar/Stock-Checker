@@ -1,12 +1,21 @@
 import {useState , useEffect} from 'react';
 import finnHub from '../APIs/finnHub';
+import {BsFillCaretUpFill} from 'react-icons/bs';
+import {BsFillCaretDownFill} from 'react-icons/bs';
 import axios from 'axios';
 
 const StockList = () => {
 
     const [stock,setStock] = useState([]);
-    const [watchList, setWatchList] = useState(['GOOGLE','MSFT','AMZN'])
-  
+    const [watchList, setWatchList] = useState(['GOOGL','MSFT','AAPL'])
+
+
+    const changeColor=(change)=>{
+    return change < 0 ?'text-red-400':'text-green-600'
+    }
+    const changeSign=(change)=>{
+    return change < 0 ? <BsFillCaretDownFill/>: <BsFillCaretUpFill/>
+    }  
 
   useEffect(()=>{
     let isMounted =true
@@ -19,7 +28,6 @@ const StockList = () => {
             }
           })
         }))
-        console.log(responses);
        const data = responses.map((response) =>{
         return{
           data: response.data,
@@ -40,26 +48,42 @@ const StockList = () => {
 
 
     return (
-    <div>
-      <table>
-        <thead>
+    <div className='reative overflow-x-auto flex items-center justify-center'>
+     <table className="w-4/5 text-sm text-left text-black bg-gray-50">
+        <thead className='text-xs text-black uppercase'>
           <tr>
-            <th>Name</th>
-            <th>Last</th>
-            <th>Chg</th>
-            <th>Chg%</th>
-            <th>Low</th>
-            <th>Open</th>
-            <th>Pclose</th>
+            <th scope='col' className='px-6 py-3'>Name</th>
+            <th scope='col' className='px-6 py-3 }'>Last</th>
+            <th scope='col' className='px-6 py-3'>Chg</th>
+            <th scope='col' className='px-6 py-3'>Chg%</th>
+            <th scope='col' className='px-6 py-3'>High</th>
+            <th scope='col' className='px-6 py-3'>Low</th>
+            <th scope='col' className='px-6 py-3'>Open</th>
+            <th scope='col' className='px-6 py-3'>Pclose</th>
           </tr>
         </thead>
         <tbody>
           {stock.map((stockData)=>{
             const {symbol,data} =stockData;
             return (
-              <tr key={symbol}>
-                <th>{symbol}</th>
-                <th>{data.c}</th>
+              <tr key={symbol} className='bg-white border-b'>
+                <th className='px-6 py-4 font-medium whitespace-nowrap'>{symbol}</th>
+                <td className='px-6 py-4'>{data.c}</td>
+                <td className={`px-6 py-4 ${changeColor(data.d)}`}>
+                  <span className='flex items-center '>
+                    {changeSign(data.d)}
+                  {data.d}
+                    </span>
+                  </td>
+                <td className={`px-6 py-4 space-x-2 ${changeColor(data.dp)}`}>
+                  <span className='flex items-center '>
+                    {changeSign(data.dp)}{data.dp}
+                    </span>
+                    </td>
+                <td className='px-6 py-4'>{data.h}</td>
+                <td className='px-6 py-4'>{data.o}</td>
+                <td className='px-6 py-4'>{data.l}</td>
+                <td className='px-6 py-4'>{data.pc}</td>
               </tr>
             )
           })}
