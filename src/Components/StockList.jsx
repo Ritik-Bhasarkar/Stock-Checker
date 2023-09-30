@@ -7,7 +7,7 @@ import { useGlobalContext } from '../Context/WatchListContext';
 
 const StockList = () => {
 
-  const {watchList} = useGlobalContext();
+  const {watchList,removeFromList} = useGlobalContext();
   const navigate = useNavigate();
 
   const [stock,setStock] = useState([]);
@@ -19,6 +19,7 @@ const StockList = () => {
     const changeSign=(change)=>{
     return change < 0 ? <BsFillCaretDownFill/>: <BsFillCaretUpFill/>
     }  
+
 
   useEffect(()=>{
     let isMounted =true
@@ -74,7 +75,7 @@ const StockList = () => {
           {stock.map((stockData)=>{
             const {symbol,data} =stockData;
             return (
-              <tr key={symbol} className='bg-white border-b'>
+              <tr key={symbol} className='bg-white border-b' id='table-row'>
                 <th onClick={()=>handleStockSelect(symbol)} className='px-6 py-4 font-medium whitespace-nowrap cursor-pointer'>{symbol}</th>
                 <td className='px-6 py-4'>{data.c}</td>
                 <td className={`px-6 py-4 ${changeColor(data.d)}`}>
@@ -91,7 +92,12 @@ const StockList = () => {
                 <td className='px-6 py-4'>{data.h}</td>
                 <td className='px-6 py-4'>{data.o}</td>
                 <td className='px-6 py-4'>{data.l}</td>
-                <td className='px-6 py-4'>{data.pc}</td>
+                <td className='px-6 py-4'>{data.pc} 
+                <button onClick={(e)=>{
+                  e.stopPropagation()
+                  removeFromList(symbol)}} id='delete-btn'
+                className=' mx-3 px-1 py-1 border-black bg-red-600'>
+                  Delete</button></td>
               </tr>
             )
           })}
