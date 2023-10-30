@@ -88,5 +88,3 @@ const StockDetailPage = () => {
 }
 
 export default StockDetailPage
-
-// flex flex-col justify-center items-center

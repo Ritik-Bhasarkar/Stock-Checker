@@ -19,8 +19,6 @@ const StockChart = ({chartData,symbol}) => {
              return day;
              }
         }
-
-    
         const timeFormat = determineTimeFormat();
         const firstIndex = timeFormat[0].y;
         const lastIndex = timeFormat[timeFormat.length - 1].y;
