@@ -9,13 +9,13 @@ Stock Checker is a stock market app developed in August 2023, leveraging the Fin
   - Users can select search results, which are then displayed in a table.
   - Ability to delete entries from the table.
   - With Name of the stock, Detailed information includes:
-    - c: Current Price
-    - d: Change
-    - dp: Percent change
-    - h: High price of the day
-    - l: Low price of the day
-    - o: open price of the day
-    - pc: Previous close price
+    - LAST: Current Price
+    - CHG: Change
+    - CHG%: Percent change
+    - HIGH: High price of the day
+    - LOW: Low price of the day
+    - OPEN: open price of the day
+    - PCLOSE: Previous close price
 
 https://github.com/Ritik-Bhasarkar/Stock-Checker/assets/71097818/7ffa177d-3b02-4b96-aaeb-29aa66137acf
  
