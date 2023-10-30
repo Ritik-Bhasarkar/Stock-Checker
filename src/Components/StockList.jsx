@@ -20,7 +20,6 @@ const StockList = () => {
     return change < 0 ? <BsFillCaretDownFill/>: <BsFillCaretUpFill/>
     }  
 
-
   useEffect(()=>{
     let isMounted =true
     const fetchData = async()=>{
