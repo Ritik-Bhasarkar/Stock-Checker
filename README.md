@@ -8,21 +8,33 @@ Stock Checker is a stock market app developed in August 2023, leveraging the Fin
   - Auto-complete search bar to dynamically search for stocks or shares.
   - Users can select search results, which are then displayed in a table.
   - Ability to delete entries from the table.
-  - Detailed information includes high, low, closing, and opening prices of the stock.
-  
+  - With Name of the stock, Detailed information includes:
+    - c: Current Price
+    - d: Change
+    - dp: Percent change
+    - h: High price of the day
+    - l: Low price of the day
+    - o: open price of the day
+    - pc: Previous close price
+
+https://github.com/Ritik-Bhasarkar/Stock-Checker/assets/71097818/7ffa177d-3b02-4b96-aaeb-29aa66137acf
+ 
 - **StockDetailPage:**
   - Provides comprehensive market analysis through detailed stock charts.
   - Users can view day, month, and year-wise graphs of the selected stock.
   - Displays additional details such as:
-    - Name: Microsoft Corp
-    - Country: US
-    - Ticker: MSFT
-    - Exchange: NASDAQ NMS - GLOBAL MARKET
-    - Industry: Technology
-    - IPO: 1986-03-13
-    - MarketCap: 2508685.9316054876
-    - Shares Outstanding: 7429.76
-    - URL: [Microsoft Corp](https://www.microsoft.com/en-us)
+    - Name
+    - Country
+    - Ticker
+    - Exchange
+    - Industry
+    - IPO
+    - MarketCap
+    - Shares Outstanding
+    - URL
+   
+
+https://github.com/Ritik-Bhasarkar/Stock-Checker/assets/71097818/aec7df13-f6ec-4842-93ee-c2e82e7429e5  
 
 **Technologies Used:**
 - Finnhub API for real-time stock data.
