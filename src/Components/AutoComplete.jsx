@@ -39,7 +39,7 @@ const showDropdown=()=>{
   },[search])
 
   return (
-    <div className='w-full h-60 flex flex-col items-center'>
+    <div>
     <div className='relative'>
       <input className=" w-96 h-12 min-w-0 rounded border border-solid px-3 py-[0.25rem]"  id='search' type='text' autoComplete='off' placeholder='search' value={search} onChange={(e)=>setSearch(e.target.value)}>
       </input>

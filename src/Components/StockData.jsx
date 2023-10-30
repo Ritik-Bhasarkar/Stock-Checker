@@ -29,7 +29,7 @@ const StockData = ({symbol}) => {
 
   return (
     <div>{stockData &&(
-        <div>
+        <div className=" stock-data mt-10 p-5 flex justify-between flex-wrap">
         <div>
           <div>
             <span>name: </span>

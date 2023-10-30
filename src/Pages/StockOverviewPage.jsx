@@ -4,8 +4,7 @@ import StockList from '../Components/StockList'
 
 const StockOverviewPage = () => {
   return (
-    <div>
-        <h1>Stock overview Page</h1>
+    <div className='min-h-screen flex flex-col justify-center items-center gap-28'>
         <AutoComplete/>
         <StockList/>
     </div>

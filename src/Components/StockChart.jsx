@@ -60,9 +60,11 @@ const StockChart = ({chartData,symbol}) => {
     }]
 
   return (
-    <div className='mt-5 px-4 py-5'>
-        <Chart options={options} series={series} type='area' width='90%'/>
-        <div>
+    <div className='p-3 shadow-md rounded'>
+        <div className='chart-bar'>
+        <Chart options={options} series={series} type='area'/>
+        </div>
+        <div className='stock-time ml-14'>
             <button className="bg-blue-500 hover:bg-blue-700 text-white font-semibold py-2 px-4 border border-blue-700 rounded"
             onClick={()=>setDateFormat('24h')}>24h</button>
             <button className="bg-blue-500 hover:bg-blue-700 text-white font-semibold py-2 px-4 border border-blue-700 rounded" onClick={()=>setDateFormat('7d')}>7d</button>

@@ -76,11 +76,11 @@ const StockDetailPage = () => {
 
 
   return (
-    <div>
+    <div className="min-h-screen flex justify-center">
       {chartData && (
-        <div>
+        <div className='w-3/5 m-10'>    
           <StockChart chartData={chartData} symbol={symbol}></StockChart>
-           <StockData symbol={symbol} />
+          <StockData symbol={symbol} />
         </div>
       )}
     </div>
@@ -88,3 +88,5 @@ const StockDetailPage = () => {
 }
 
 export default StockDetailPage
+
+// flex flex-col justify-center items-center
