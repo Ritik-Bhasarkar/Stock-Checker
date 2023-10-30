@@ -1,70 +1,69 @@
-# Getting Started with Create React App
+# Stock Checker
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+**Description:**
+Stock Checker is a stock market app developed in August 2023, leveraging the Finnhub API to provide users with real-time stock data. The app features two main pages: StockOverviewPage and StockDetailPage. 
 
-## Available Scripts
+**Features:**
+- **StockOverviewPage:**
+  - Auto-complete search bar to dynamically search for stocks or shares.
+  - Users can select search results, which are then displayed in a table.
+  - Ability to delete entries from the table.
+  - Detailed information includes high, low, closing, and opening prices of the stock.
+  
+- **StockDetailPage:**
+  - Provides comprehensive market analysis through detailed stock charts.
+  - Users can view day, month, and year-wise graphs of the selected stock.
+  - Displays additional details such as:
+    - Name: Microsoft Corp
+    - Country: US
+    - Ticker: MSFT
+    - Exchange: NASDAQ NMS - GLOBAL MARKET
+    - Industry: Technology
+    - IPO: 1986-03-13
+    - MarketCap: 2508685.9316054876
+    - Shares Outstanding: 7429.76
+    - URL: [Microsoft Corp](https://www.microsoft.com/en-us)
 
-In the project directory, you can run:
+**Technologies Used:**
+- Finnhub API for real-time stock data.
+- ApexCharts library for interactive stock charts.
+- Axios for implementing REST API methods.
 
-### `npm start`
+**How to Use:**
+1. **StockOverviewPage:**
+   - Enter the stock or share in the auto-complete search bar.
+   - Select from the search results to add to the table.
+   - Manage entries in the table, including deletion.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+2. **StockDetailPage:**
+   - Click on the desired stock entry in the table from the StockOverviewPage.
+   - Explore day, month, and year-wise stock charts for comprehensive analysis.
+   - Access detailed information about the stock.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+**Installation:**
+1. Clone the repository:
+   ```
+   git clone https://github.com/Ritik-Bhasarkar/Stock-Checker.git
+   ```
+2. Navigate to the project directory:
+   ```
+   cd Stock-Checker
+   ```
+3. Open `index.html` in your preferred web browser.
 
-### `npm test`
+**Contributing:**
+- Fork the repository.
+- Create a new branch: `git checkout -b new-feature`.
+- Make your changes and commit them: `git commit -m 'Add new feature'`.
+- Push to the branch: `git push origin new-feature`.
+- Submit a pull request.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+**License:**
+This project is licensed under the [MIT License](LICENSE).
 
-### `npm run build`
+**Acknowledgements:**
+- Finnhub API for real-time stock data.
+- ApexCharts library for interactive charts.
+- Axios for making API requests.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Feel free to contribute and use Stock Checker for your stock market analysis!
